@@ -1,5 +1,5 @@
 a=10
-name = 'Sachin'
+name = 'Sachin Tendulkar'
 f = 99.99
 
 print('Value of a is',a)
