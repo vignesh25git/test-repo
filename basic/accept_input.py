@@ -1,5 +1,5 @@
 def accept_input() :
-    a = input("Enter input")
+    a = input("Enter input branch 1")
     return a
 
 def convert_to_integer(str):
