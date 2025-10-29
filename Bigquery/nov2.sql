@@ -1,0 +1,1 @@
+select * from nove2 where id_nove2 = 1;
