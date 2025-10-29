@@ -1,0 +1,14 @@
+name: Basic CI Check
+on:
+  pull_request:
+    branches:
+      - master
+      - '**'   # (optional: to run on all PRs)
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Run basic script
+        run: echo "✅ GitHub Actions running successfully!"
