@@ -1,1 +1,1 @@
-select * from table1_october;sss
+select * from table1_october;
