@@ -34,7 +34,8 @@ loaddt date);
 -- Since, insert overtwrite into table option is not supported in BQ as like hive, we can't do insert overwrite partition also.
 -- as a workaround, we have to delete the data seperately, then load into the partition table. delete from table where loaddt=loaddt(variable)
 
---Partitions can be created only on the low cardinal Date & Number columns, Maximum number of partitions can be only 4000
+--Partitions can be created only on the low cardinal Date & Number columns, Maximum number of partitions can be only 4000 ....
+-- Test testing
 
 create table if not exists curatedds.trans_online_part
 (transsk numeric,customerid int64,productname string,productcategory string,productprice int64,productidint int64,prodidstr string ,loadts timestamp,loaddt date)
@@ -53,6 +54,7 @@ cluster by custno,txnno,loaddt
 OPTIONS (description = 'point of sale table with partition and clusters');
 
 --Block1 for loading raw consumer data to the curated consumer table (Full Refresh) - using inline views (some name for the memory)
+-- Hello
 begin
 --truncate table curatedds.consumer_full_load;
 --clensing - de duplication
@@ -185,5 +187,6 @@ select txnno,cast(dt as date) dt,timestamp(concat(dt,' ',hour)) as ts,ST_GEOGPOI
 from (select case when cast(dt as date)>current_date() then current_date() else dt end as dt,* except(dt) from `rawds.trans_mobile_channel`) t
 where extract(year from cast(dt as date))=2023;
 end;
+
 
 end;
