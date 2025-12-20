@@ -17,7 +17,8 @@ LOAD DATA OVERWRITE `rawds.trans_pos` (txnno numeric,txndt string,custno int64,a
     format = 'CSV', uris = ['gs://incpetez-data-samples/dataset/bqdata/store_pos_product_trans.csv'],
     field_delimiter=',');
 
-select current_timestamp,"Create and Load JSON data into BQ Managed table using auto detect schema";
+select current_timestamp,"Create and Load JSON data into BQ Managed table using auto detect schemaaaaa";;
+-- testing testing
 LOAD DATA OVERWRITE rawds.trans_online
   FROM FILES (
     format = 'JSON', uris = ['gs://incpetez-data-samples/dataset/bqdata/online_products_trans.json']);
@@ -43,4 +44,6 @@ LOAD DATA OVERWRITE `rawds.trans_mobile_channel`
     format = 'CSV', uris = ['gs://incpetez-data-samples/dataset/bqdata/mobile_trans.csv'],
     field_delimiter=',');
 
+
 select current_timestamp,"Load completed Successfully";
+-- Hello
