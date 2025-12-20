@@ -44,4 +44,6 @@ LOAD DATA OVERWRITE `rawds.trans_mobile_channel`
     format = 'CSV', uris = ['gs://incpetez-data-samples/dataset/bqdata/mobile_trans.csv'],
     field_delimiter=',');
 
+
 select current_timestamp,"Load completed Successfully";
+-- Hello
