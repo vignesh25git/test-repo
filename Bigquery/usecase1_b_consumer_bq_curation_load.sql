@@ -13,7 +13,7 @@ begin
 --interview questions: Difference between Hive & Bigquery - (Bigquery support delete and hive doesn't support Delete directly (we need some workaround)
 create schema if not exists curatedds options(location='us-central1');
 
-create or replace table curatedds.consumer_full_load(
+create or replace table curatedds.consumer_full_load1(
 custno INT64, 
 fullname STRING,
 age INT64,
@@ -24,6 +24,7 @@ loaddt date);
 
 --truncate table curatedds.consumer_full_load;
 --delete from curatedds.consumer_full_load where filters....;
+--delete from table;
 
 --Biquery will support only date or integer columns type and not string for partitioning, where as hive supports string also
 --Biquery will support only single partitioning columns (no multi level partition), where as hive supports multiple (multi level) partitions columns
@@ -155,7 +156,7 @@ begin
 --wildcard table queries
 --table segregation for all the above reasons mentioned.
 --for current year 2023 date alone, we are making the future date as current date using INLINE VIEW/FROM CLAUSE SUBQUERY, to correct the data issue from the source.
-
+--2026
 CREATE TABLE if not exists curatedds.trans_mobile_autopart_2021
 (txnno numeric,dt date,ts timestamp,geo_coordinate geography,net string,provider string,activity string,postal_code int,town_name string,loadts timestamp,loaddt date)
 PARTITION BY
