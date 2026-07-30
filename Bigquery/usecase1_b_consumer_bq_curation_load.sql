@@ -91,7 +91,7 @@ begin
 --adding some date and timestamp columns for load data.
 --Reusability feature of temp table and performance feature of temp table.
 --generate_uuid will generate unique id alphanumeric value, convert to number (hashing) using farm_fingerprint, make it positive value using abs function
-
+-- bigquery  
 create or replace temp table online_trans_view as 
 select abs(farm_fingerprint(generate_uuid())) as transk
 ,customerid
