@@ -13,7 +13,7 @@ begin
 --interview questions: Difference between Hive & Bigquery - (Bigquery support delete and hive doesn't support Delete directly (we need some workaround)
 create schema if not exists curatedds options(location='us-central1');
 
-create or replace table curatedds.consumer_full_load(
+create or replace table curatedds.consumer_full_load2(
 custno INT64, 
 fullname STRING,
 age INT64,
@@ -90,7 +90,7 @@ begin
 --adding some date and timestamp columns for load data.
 --Reusability feature of temp table and performance feature of temp table.
 --generate_uuid will generate unique id alphanumeric value, convert to number (hashing) using farm_fingerprint, make it positive value using abs function
-
+-- bigquery  
 create or replace temp table online_trans_view as 
 select abs(farm_fingerprint(generate_uuid())) as transk
 ,customerid
